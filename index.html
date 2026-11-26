@@ -134,7 +134,6 @@
             color: var(--text-primary);
             line-height: 1.6;
             overflow-x: hidden;
-            perspective: 1000px;
             cursor: none;
         }
 
@@ -2419,9 +2418,6 @@ window.closeLightbox = function() {
 };
 const lb = document.getElementById('lightbox');
 if (lb) {
-  // body has `perspective`, which makes it the containing block for fixed children,
-  // so the lightbox would open off-screen. Move it outside body so it pins to the viewport.
-  document.documentElement.appendChild(lb);
   // Deterrents: no right-click "Save image", no drag-to-desktop, no long-press save on phones.
   ['contextmenu', 'dragstart'].forEach(ev => lb.addEventListener(ev, e => e.preventDefault()));
   lb.addEventListener('click', function(e) { if (e.target === this) window.closeLightbox(); });
