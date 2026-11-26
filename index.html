@@ -3,11 +3,14 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<!-- Security: only load from this site; the form may only talk to Formspree. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; connect-src https://formspree.io; form-action https://formspree.io; object-src 'none'; base-uri 'self'; upgrade-insecure-requests"/>
+<meta name="referrer" content="strict-origin-when-cross-origin"/>
 <title>Haareesh Kumar — Cloud Engineer | Malaysia</title>
 <meta name="description" content="Haareesh Kumar is a Cloud Engineer based in Petaling Jaya, Malaysia. Specialising in AWS, Linux, ZStack, Veeam, Tailscale and enterprise infrastructure."/>
 <meta name="keywords" content="Haareesh Kumar, Cloud Engineer Malaysia, AWS Engineer, Linux Administrator, ZStack, Veeam, Infrastructure Engineer Malaysia"/>
 <meta name="author" content="Haareesh Kumar"/>
-<meta name="robots" content="index, follow"/>
+<meta name="robots" content="index, follow, noimageindex"/>
 <link rel="canonical" href="https://haareeshkumar.com"/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://haareeshkumar.com"/>
@@ -1790,7 +1793,7 @@ section:not(.hero) { content-visibility: auto; contain-intrinsic-size: auto 900p
       <button class="lightbox-close" onclick="window.closeLightbox()">×</button>
     </div>
     <div class="lightbox-body" id="lightboxBody"></div>
-    <div class="lightbox-verify">Copies of these certificates are watermarked. Verify credentials on <a href="https://www.credly.com/users/haareesh-kumar" target="_blank" rel="noopener">Credly</a>.</div>
+    <div class="lightbox-verify">Copies of these certificates are watermarked. Verify credentials on <a href="https://www.credly.com/users/haareesh-kumar" target="_blank" rel="noopener noreferrer">Credly</a>.</div>
   </div>
 </div>
 
@@ -1866,7 +1869,7 @@ section:not(.hero) { content-visibility: auto; contain-intrinsic-size: auto 900p
     </div>
     <div class="hero-btns" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:3rem;">
       <a href="#access" class="cta-btn" style="display:inline-flex;align-items:center;gap:8px;padding:1rem 2rem;background:linear-gradient(135deg,var(--accent-red),#b91c1c);color:#fff;border-radius:12px;text-decoration:none;font-weight:600;box-shadow:0 0 30px var(--glow-red);transition:all 0.3s;">🔐 Request Lab Access</a>
-      <a href="https://www.credly.com/users/haareesh-kumar" target="_blank" class="cta-btn" style="display:inline-flex;align-items:center;gap:8px;padding:1rem 2rem;background:transparent;color:var(--accent-cyan);border:2px solid var(--accent-cyan);border-radius:12px;text-decoration:none;font-weight:600;box-shadow:0 0 20px var(--glow-cyan);transition:all 0.3s;">🏆 Credly Badges ↗</a>
+      <a href="https://www.credly.com/users/haareesh-kumar" target="_blank" rel="noopener noreferrer" class="cta-btn" style="display:inline-flex;align-items:center;gap:8px;padding:1rem 2rem;background:transparent;color:var(--accent-cyan);border:2px solid var(--accent-cyan);border-radius:12px;text-decoration:none;font-weight:600;box-shadow:0 0 20px var(--glow-cyan);transition:all 0.3s;">🏆 Credly Badges ↗</a>
       <a href="#certs" class="cta-btn" style="display:inline-flex;align-items:center;gap:8px;padding:1rem 2rem;background:rgba(255,255,255,0.05);color:var(--text-primary);border:1px solid var(--border-color);border-radius:12px;text-decoration:none;font-weight:600;transition:all 0.3s;">📋 Certifications</a>
     </div>
     <div style="display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;">
@@ -1953,7 +1956,7 @@ section:not(.hero) { content-visibility: auto; contain-intrinsic-size: auto 900p
 
   <!-- Badges row -->
   <div class="badge-row-3d">
-    <a href="https://www.credly.com/users/haareesh-kumar" target="_blank" class="badge-card-3d">
+    <a href="https://www.credly.com/users/haareesh-kumar" target="_blank" rel="noopener noreferrer" class="badge-card-3d">
       <div class="badge-icon-3d" style="background:linear-gradient(135deg,rgba(255,153,0,0.2),rgba(255,184,77,0.2));color:#ff9900;">CR</div>
       <div><div style="font-weight:600;margin-bottom:2px;">Credly Profile</div><div style="font-size:0.8rem;color:var(--text-secondary);font-family:monospace;">View all verified badges ↗</div></div>
     </a>
@@ -2201,7 +2204,7 @@ section:not(.hero) { content-visibility: auto; contain-intrinsic-size: auto 900p
       <div class="access-card-icon">🖥️</div>
       <div class="access-card-title">Remote Desktop</div>
       <p class="access-card-desc">Access my homelab via Apache Guacamole — browser-based remote desktop gateway. Credentials provided after request approval.</p>
-      <a href="https://guac.cloudron.haareeshkumar.com/" target="_blank" style="display:inline-flex;align-items:center;gap:8px;margin-top:1rem;padding:0.75rem 1.5rem;background:linear-gradient(135deg,var(--accent-red),#b91c1c);color:#fff;border-radius:10px;text-decoration:none;font-weight:600;font-size:0.9rem;box-shadow:0 0 20px var(--glow-red);transition:all 0.3s;align-self:flex-start;">Open Guacamole ↗</a>
+      <a href="https://guac.cloudron.haareeshkumar.com/" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:8px;margin-top:1rem;padding:0.75rem 1.5rem;background:linear-gradient(135deg,var(--accent-red),#b91c1c);color:#fff;border-radius:10px;text-decoration:none;font-weight:600;font-size:0.9rem;box-shadow:0 0 20px var(--glow-red);transition:all 0.3s;align-self:flex-start;">Open Guacamole ↗</a>
     </div>
     <div class="access-card-3d">
       <div class="access-card-icon">🔐</div>
@@ -2220,11 +2223,11 @@ section:not(.hero) { content-visibility: auto; contain-intrinsic-size: auto 900p
     <form id="accessForm" action="https://formspree.io/f/xdayjogb" method="POST">
       <div class="form-3d-group">
         <label class="form-3d-label">Full Name</label>
-        <input type="text" name="name" class="form-3d-input" placeholder="Your full name" required/>
+        <input type="text" name="name" maxlength="100" autocomplete="name" class="form-3d-input" placeholder="Your full name" required/>
       </div>
       <div class="form-3d-group">
         <label class="form-3d-label">Email Address</label>
-        <input type="email" name="email" class="form-3d-input" placeholder="you@example.com" required/>
+        <input type="email" name="email" maxlength="254" autocomplete="email" class="form-3d-input" placeholder="you@example.com" required/>
       </div>
       <div class="form-3d-group">
         <label class="form-3d-label">Access Type</label>
@@ -2233,8 +2236,9 @@ section:not(.hero) { content-visibility: auto; contain-intrinsic-size: auto 900p
       </div>
       <div class="form-3d-group">
         <label class="form-3d-label">Purpose</label>
-        <textarea name="purpose" class="form-3d-input" placeholder="Brief description of why you need access..." required></textarea>
+        <textarea name="purpose" maxlength="2000" class="form-3d-input" placeholder="Brief description of why you need access..." required></textarea>
       </div>
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0"/>
       <input type="hidden" name="_subject" value="Lab Access Request — haareeshkumar.com"/>
       <button type="submit" style="width:100%;padding:1rem;background:linear-gradient(135deg,var(--accent-red),#b91c1c);border:none;border-radius:12px;color:#fff;font-size:1rem;font-weight:600;cursor:pointer;box-shadow:0 0 25px var(--glow-red);transition:all 0.3s;font-family:inherit;">Submit Request</button>
       <div class="success-msg" id="successMsg">✓ Request received! I'll get back to you within 24 hours.</div>
@@ -2259,11 +2263,11 @@ section:not(.hero) { content-visibility: auto; contain-intrinsic-size: auto 900p
             <span style="font-size:1.5rem;">📱</span>
             <div><div style="font-weight:600;color:var(--text-primary);">Phone</div><div style="font-size:0.85rem;">+60 011-1146 6926</div></div>
           </a>
-          <a href="https://www.linkedin.com/in/haareeshkumar/" target="_blank" class="contact-method">
+          <a href="https://www.linkedin.com/in/haareeshkumar/" target="_blank" rel="noopener noreferrer" class="contact-method">
             <span style="font-size:1.5rem;">💼</span>
             <div><div style="font-weight:600;color:var(--text-primary);">LinkedIn</div><div style="font-size:0.85rem;">linkedin.com/in/haareeshkumar</div></div>
           </a>
-          <a href="https://www.credly.com/users/haareesh-kumar" target="_blank" class="contact-method">
+          <a href="https://www.credly.com/users/haareesh-kumar" target="_blank" rel="noopener noreferrer" class="contact-method">
             <span style="font-size:1.5rem;">🏆</span>
             <div><div style="font-weight:600;color:var(--text-primary);">Credly</div><div style="font-size:0.85rem;">View all verified badges</div></div>
           </a>
@@ -2291,10 +2295,10 @@ section:not(.hero) { content-visibility: auto; contain-intrinsic-size: auto 900p
   <p style="margin-bottom:0.5rem;"><span style="color:var(--accent-red);">Haareesh Kumar</span> · Cloud Engineer · Petaling Jaya, Malaysia</p>
   <p>Hosted on GitHub Pages · Cloudflare DNS · Homelab on Ubuntu</p>
   <div style="margin-top:1rem;display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;">
-    <a href="https://www.linkedin.com/in/haareeshkumar/" target="_blank" style="color:var(--text-secondary);text-decoration:none;transition:color 0.3s;" onmouseover="this.style.color='var(--accent-cyan)'" onmouseout="this.style.color='var(--text-secondary)'">LinkedIn</a>
-    <a href="https://www.credly.com/users/haareesh-kumar" target="_blank" style="color:var(--text-secondary);text-decoration:none;transition:color 0.3s;" onmouseover="this.style.color='var(--accent-cyan)'" onmouseout="this.style.color='var(--text-secondary)'">Credly</a>
+    <a href="https://www.linkedin.com/in/haareeshkumar/" target="_blank" rel="noopener noreferrer" style="color:var(--text-secondary);text-decoration:none;transition:color 0.3s;" onmouseover="this.style.color='var(--accent-cyan)'" onmouseout="this.style.color='var(--text-secondary)'">LinkedIn</a>
+    <a href="https://www.credly.com/users/haareesh-kumar" target="_blank" rel="noopener noreferrer" style="color:var(--text-secondary);text-decoration:none;transition:color 0.3s;" onmouseover="this.style.color='var(--accent-cyan)'" onmouseout="this.style.color='var(--text-secondary)'">Credly</a>
     <a href="mailto:haareesh2@gmail.com" style="color:var(--text-secondary);text-decoration:none;transition:color 0.3s;" onmouseover="this.style.color='var(--accent-cyan)'" onmouseout="this.style.color='var(--text-secondary)'">Email</a>
-    <a href="https://guac.cloudron.haareeshkumar.com/" target="_blank" style="color:var(--text-secondary);text-decoration:none;transition:color 0.3s;" onmouseover="this.style.color='var(--accent-cyan)'" onmouseout="this.style.color='var(--text-secondary)'">Guacamole</a>
+    <a href="https://guac.cloudron.haareeshkumar.com/" target="_blank" rel="noopener noreferrer" style="color:var(--text-secondary);text-decoration:none;transition:color 0.3s;" onmouseover="this.style.color='var(--accent-cyan)'" onmouseout="this.style.color='var(--text-secondary)'">Guacamole</a>
   </div>
 </footer>
 

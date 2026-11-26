@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /certs/
+
+User-agent: Googlebot-Image
+Disallow: /
