@@ -3,20 +3,20 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<!-- Security: only load from this site; the form may only talk to Formspree. -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; connect-src https://formspree.io; form-action https://formspree.io; object-src 'none'; base-uri 'self'; upgrade-insecure-requests"/>
+<!-- Security: only load from this site; no outgoing requests (re-allow https://formspree.io if the lab access form returns). -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; connect-src 'none'; form-action 'none'; object-src 'none'; base-uri 'self'; upgrade-insecure-requests"/>
 <meta name="referrer" content="strict-origin-when-cross-origin"/>
-<title>Haareesh Kumar — Cloud Engineer | Malaysia</title>
-<meta name="description" content="Haareesh Kumar is a Cloud Engineer based in Petaling Jaya, Malaysia. Specialising in AWS, Linux, ZStack, Veeam, Tailscale and enterprise infrastructure."/>
-<meta name="keywords" content="Haareesh Kumar, Cloud Engineer Malaysia, AWS Engineer, Linux Administrator, ZStack, Veeam, Infrastructure Engineer Malaysia"/>
+<title>Haareesh Kumar — Senior Cloud Engineer | Malaysia</title>
+<meta name="description" content="Haareesh Kumar is a Senior Cloud Engineer based in Petaling Jaya, Malaysia. Specialising in AWS, Linux, ZStack, Veeam, enterprise server hardware and infrastructure."/>
+<meta name="keywords" content="Haareesh Kumar, Senior Cloud Engineer Malaysia, Cloud Engineer Malaysia, Server Hardware, AWS Engineer, Linux Administrator, ZStack, Veeam, Infrastructure Engineer Malaysia"/>
 <meta name="author" content="Haareesh Kumar"/>
 <meta name="robots" content="index, follow, noimageindex"/>
 <link rel="canonical" href="https://haareeshkumar.com"/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://haareeshkumar.com"/>
-<meta property="og:title" content="Haareesh Kumar — Cloud Engineer | Malaysia"/>
-<meta property="og:description" content="Cloud Engineer specialising in AWS, Linux, ZStack and enterprise backup solutions. Based in Petaling Jaya, Malaysia."/>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Haareesh Kumar","jobTitle":"Cloud Engineer","url":"https://haareeshkumar.com","email":"haareesh2@gmail.com","telephone":"+60111466926","address":{"@type":"PostalAddress","addressLocality":"Petaling Jaya","addressCountry":"MY"},"sameAs":["https://www.linkedin.com/in/haareeshkumar/","https://www.credly.com/users/haareesh-kumar"]}</script>
+<meta property="og:title" content="Haareesh Kumar — Senior Cloud Engineer | Malaysia"/>
+<meta property="og:description" content="Senior Cloud Engineer specialising in AWS, Linux, ZStack, enterprise server hardware and backup solutions. Based in Petaling Jaya, Malaysia."/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Haareesh Kumar","jobTitle":"Senior Cloud Engineer","url":"https://haareeshkumar.com","email":"haareesh2@gmail.com","telephone":"+60111466926","address":{"@type":"PostalAddress","addressLocality":"Petaling Jaya","addressCountry":"MY"},"sameAs":["https://www.linkedin.com/in/haareeshkumar/","https://www.credly.com/users/haareesh-kumar"]}</script>
 <style>
         * {
             margin: 0;
@@ -1764,6 +1764,14 @@ section:not(.hero) { content-visibility: auto; contain-intrinsic-size: auto 900p
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
 }
+
+/* Simple monogram logo */
+.logo { animation: none; text-shadow: none; }
+.logo-mark { display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:10px;
+  font-size:1rem; font-weight:800; letter-spacing:1px; color:#fff;
+  background:linear-gradient(135deg, var(--accent-red), #b91c1c);
+  box-shadow:0 0 0 1px rgba(255,255,255,0.08), 0 0 18px var(--glow-red); transition:transform .2s ease; }
+.logo:hover .logo-mark { transform:translateY(-2px); }
 </style>
 </head>
 <body>
@@ -1800,17 +1808,7 @@ section:not(.hero) { content-visibility: auto; contain-intrinsic-size: auto 900p
 <!-- NAV -->
 <nav>
   <div class="nav-container">
-    <a href="#" class="logo">
-      <div class="logo-cube">
-        <div class="front">H</div>
-        <div class="back">K</div>
-        <div class="right">☁</div>
-        <div class="left">⚡</div>
-        <div class="top">🔐</div>
-        <div class="bottom">🖥</div>
-      </div>
-      HK.dev
-    </a>
+    <a href="#" class="logo" aria-label="Haareesh Kumar — home"><span class="logo-mark">HK</span></a>
     <button class="hamburger-btn" id="hamburger" onclick="toggleMenu()">
       <span></span><span></span><span></span>
     </button>
@@ -1818,7 +1816,6 @@ section:not(.hero) { content-visibility: auto; contain-intrinsic-size: auto 900p
       <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
       <li><a href="#certs" onclick="closeMenu()">Certs</a></li>
       <li><a href="#experience" onclick="closeMenu()">Experience</a></li>
-      <li><a href="#access" onclick="closeMenu()">Lab Access</a></li>
       <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
     </ul>
   </div>
@@ -1850,15 +1847,15 @@ section:not(.hero) { content-visibility: auto; contain-intrinsic-size: auto 900p
         </div>
         <div class="terminal-body-3d">
           <div class="terminal-line"><span class="prompt">haareesh@homelab</span>:<span style="color:var(--accent-blue)">~</span>$ <span class="command">whoami</span></div>
-          <div class="terminal-line"><span class="output">Haareesh Kumar — Cloud Engineer, Petaling Jaya, Malaysia</span></div>
+          <div class="terminal-line"><span class="output">Haareesh Kumar — Senior Cloud Engineer, Petaling Jaya, Malaysia</span></div>
           <div class="terminal-line"><span class="prompt">haareesh@homelab</span>:<span style="color:var(--accent-blue)">~</span>$ <span class="command">cat expertise.txt</span></div>
-          <div class="terminal-line"><span class="output">AWS · ZStack · Linux · Veeam · Tailscale · Guacamole · Nginx · Cloudflare</span></div>
+          <div class="terminal-line"><span class="output">AWS · ZStack · Linux · Veeam · Server Hardware · Tailscale · Nginx · Cloudflare</span></div>
           <div class="terminal-line"><span class="prompt">haareesh@homelab</span>:<span style="color:var(--accent-blue)">~</span>$ <span style="color:var(--accent-red)">█</span></div>
         </div>
       </div>
     </div>
     <h1 class="hero-title" data-text="HAAREESH KUMAR">HAAREESH KUMAR</h1>
-    <p class="hero-subtitle">Cloud Engineer · <span>Infrastructure</span> · Security · Malaysia</p>
+    <p class="hero-subtitle">Senior Cloud Engineer · <span>Infrastructure</span> · Security · Malaysia</p>
     <div class="status-badge-3d" style="margin-bottom:2rem;">
       <div class="status-indicator">
         <div class="status-bar"></div><div class="status-bar"></div>
@@ -1868,7 +1865,7 @@ section:not(.hero) { content-visibility: auto; contain-intrinsic-size: auto 900p
       <span class="status-text">Available · Petaling Jaya, MY</span>
     </div>
     <div class="hero-btns" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:3rem;">
-      <a href="#access" class="cta-btn" style="display:inline-flex;align-items:center;gap:8px;padding:1rem 2rem;background:linear-gradient(135deg,var(--accent-red),#b91c1c);color:#fff;border-radius:12px;text-decoration:none;font-weight:600;box-shadow:0 0 30px var(--glow-red);transition:all 0.3s;">🔐 Request Lab Access</a>
+      <a href="#contact" class="cta-btn" style="display:inline-flex;align-items:center;gap:8px;padding:1rem 2rem;background:linear-gradient(135deg,var(--accent-red),#b91c1c);color:#fff;border-radius:12px;text-decoration:none;font-weight:600;box-shadow:0 0 30px var(--glow-red);transition:all 0.3s;">✉️ Get in Touch</a>
       <a href="https://www.credly.com/users/haareesh-kumar" target="_blank" rel="noopener noreferrer" class="cta-btn" style="display:inline-flex;align-items:center;gap:8px;padding:1rem 2rem;background:transparent;color:var(--accent-cyan);border:2px solid var(--accent-cyan);border-radius:12px;text-decoration:none;font-weight:600;box-shadow:0 0 20px var(--glow-cyan);transition:all 0.3s;">🏆 Credly Badges ↗</a>
       <a href="#certs" class="cta-btn" style="display:inline-flex;align-items:center;gap:8px;padding:1rem 2rem;background:rgba(255,255,255,0.05);color:var(--text-primary);border:1px solid var(--border-color);border-radius:12px;text-decoration:none;font-weight:600;transition:all 0.3s;">📋 Certifications</a>
     </div>
@@ -1902,7 +1899,7 @@ section:not(.hero) { content-visibility: auto; contain-intrinsic-size: auto 900p
       <div class="skill-card-content">
         <div class="skill-icon-3d">🐧</div>
         <h3 class="skill-title">OS & Server</h3>
-        <p class="skill-desc">Linux and Windows Server administration, hardware maintenance, and server virtualisation.</p>
+        <p class="skill-desc">Linux and Windows Server administration, patching, and server virtualisation.</p>
         <div class="skill-tags"><span class="skill-tag">Linux</span><span class="skill-tag">Ubuntu</span><span class="skill-tag">Windows Server</span><span class="skill-tag">VMware</span></div>
         <div class="skill-progress-3d"><div class="skill-progress-fill" data-width="88"></div></div>
       </div>
@@ -1920,18 +1917,18 @@ section:not(.hero) { content-visibility: auto; contain-intrinsic-size: auto 900p
       <div class="skill-card-content">
         <div class="skill-icon-3d">🔐</div>
         <h3 class="skill-title">Networking & Security</h3>
-        <p class="skill-desc">VPN management, reverse proxy configuration, and Cloudflare security layering.</p>
+        <p class="skill-desc">VPN management, secure remote access, reverse proxy configuration, and Cloudflare security layering.</p>
         <div class="skill-tags"><span class="skill-tag">Tailscale</span><span class="skill-tag">Nginx</span><span class="skill-tag">Cloudflare</span><span class="skill-tag">WireGuard</span></div>
         <div class="skill-progress-3d"><div class="skill-progress-fill" data-width="82"></div></div>
       </div>
     </div>
     <div class="skill-card-3d" data-animate>
       <div class="skill-card-content">
-        <div class="skill-icon-3d">🖥️</div>
-        <h3 class="skill-title">Remote Access</h3>
-        <p class="skill-desc">Web-based remote desktop using Apache Guacamole for secure homelab access.</p>
-        <div class="skill-tags"><span class="skill-tag">Guacamole</span><span class="skill-tag">RDP</span><span class="skill-tag">VNC</span><span class="skill-tag">SSH</span></div>
-        <div class="skill-progress-3d"><div class="skill-progress-fill" data-width="80"></div></div>
+        <div class="skill-icon-3d">🗄️</div>
+        <h3 class="skill-title">Server Hardware</h3>
+        <p class="skill-desc">Enterprise server hardware from rack to runtime — deployment, component upgrades, fault diagnosis and full lifecycle maintenance.</p>
+        <div class="skill-tags"><span class="skill-tag">HPE Servers</span><span class="skill-tag">RAID &amp; Storage</span><span class="skill-tag">Firmware</span><span class="skill-tag">Diagnostics</span></div>
+        <div class="skill-progress-3d"><div class="skill-progress-fill" data-width="88"></div></div>
       </div>
     </div>
     <div class="skill-card-3d" data-animate>
@@ -2138,7 +2135,7 @@ section:not(.hero) { content-visibility: auto; contain-intrinsic-size: auto 900p
       <div class="timeline-dot-3d"></div>
       <div class="timeline-content-3d">
         <span class="timeline-date">Mar 2025 — Present</span>
-        <h3 class="timeline-title">Cloud Engineer</h3>
+        <h3 class="timeline-title">Senior Cloud Engineer</h3>
         <p class="timeline-company">Strateq Group · Petaling Jaya</p>
         <p class="timeline-desc">Microsoft 365 support and administration. Server monitoring achieving 99.99% availability. Veeam Backup & Replication infrastructure management. Physical and virtual server hardware administration and preventive maintenance.</p>
         <div class="timeline-techs"><span class="timeline-tech">Microsoft 365</span><span class="timeline-tech">Veeam</span><span class="timeline-tech">Windows Server</span><span class="timeline-tech">Linux</span></div>
@@ -2192,61 +2189,6 @@ section:not(.hero) { content-visibility: auto; contain-intrinsic-size: auto 900p
   </div>
 </section>
 
-<!-- LAB ACCESS -->
-<section id="access">
-  <div class="section-header">
-    <div class="section-tag-3d">// Homelab</div>
-    <h2 class="section-title">Lab Access</h2>
-    <p class="section-subtitle">Request access to my homelab environment for demos, collaboration, or exploration.</p>
-  </div>
-  <div class="access-grid-2">
-    <div class="access-card-3d">
-      <div class="access-card-icon">🖥️</div>
-      <div class="access-card-title">Remote Desktop</div>
-      <p class="access-card-desc">Access my homelab via Apache Guacamole — browser-based remote desktop gateway. Credentials provided after request approval.</p>
-      <a href="https://guac.cloudron.haareeshkumar.com/" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:8px;margin-top:1rem;padding:0.75rem 1.5rem;background:linear-gradient(135deg,var(--accent-red),#b91c1c);color:#fff;border-radius:10px;text-decoration:none;font-weight:600;font-size:0.9rem;box-shadow:0 0 20px var(--glow-red);transition:all 0.3s;align-self:flex-start;">Open Guacamole ↗</a>
-    </div>
-    <div class="access-card-3d">
-      <div class="access-card-icon">🔐</div>
-      <div class="access-card-title">VPN Access</div>
-      <p class="access-card-desc">Homelab is protected by Tailscale VPN. Submit a request below — I'll review and send you a Tailscale invite directly to your email.</p>
-      <a href="#request-form" style="display:inline-flex;align-items:center;gap:8px;margin-top:1rem;padding:0.75rem 1.5rem;background:transparent;color:var(--accent-cyan);border:2px solid var(--accent-cyan);border-radius:10px;text-decoration:none;font-weight:600;font-size:0.9rem;box-shadow:0 0 15px var(--glow-cyan);transition:all 0.3s;align-self:flex-start;">Request Access ↓</a>
-    </div>
-  </div>
-
-  <div class="form-3d" id="request-form">
-    <div style="margin-bottom:1.5rem;">
-      <div class="section-tag-3d" style="font-size:0.7rem;margin-bottom:0.75rem;display:inline-flex;">// Access Request</div>
-      <h3 style="font-size:1.3rem;font-weight:700;">Request Lab Access</h3>
-      <p style="color:var(--text-secondary);font-size:0.85rem;margin-top:0.5rem;font-family:monospace;">I'll review and respond within 24 hours.</p>
-    </div>
-    <form id="accessForm" action="https://formspree.io/f/xdayjogb" method="POST">
-      <div class="form-3d-group">
-        <label class="form-3d-label">Full Name</label>
-        <input type="text" name="name" maxlength="100" autocomplete="name" class="form-3d-input" placeholder="Your full name" required/>
-      </div>
-      <div class="form-3d-group">
-        <label class="form-3d-label">Email Address</label>
-        <input type="email" name="email" maxlength="254" autocomplete="email" class="form-3d-input" placeholder="you@example.com" required/>
-      </div>
-      <div class="form-3d-group">
-        <label class="form-3d-label">Access Type</label>
-        <label class="check-3d"><input type="checkbox" name="access_type" value="Guacamole RDP"/> Guacamole Remote Desktop</label>
-        <label class="check-3d"><input type="checkbox" name="access_type" value="Tailscale VPN"/> Tailscale VPN</label>
-      </div>
-      <div class="form-3d-group">
-        <label class="form-3d-label">Purpose</label>
-        <textarea name="purpose" maxlength="2000" class="form-3d-input" placeholder="Brief description of why you need access..." required></textarea>
-      </div>
-      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0"/>
-      <input type="hidden" name="_subject" value="Lab Access Request — haareeshkumar.com"/>
-      <button type="submit" style="width:100%;padding:1rem;background:linear-gradient(135deg,var(--accent-red),#b91c1c);border:none;border-radius:12px;color:#fff;font-size:1rem;font-weight:600;cursor:pointer;box-shadow:0 0 25px var(--glow-red);transition:all 0.3s;font-family:inherit;">Submit Request</button>
-      <div class="success-msg" id="successMsg">✓ Request received! I'll get back to you within 24 hours.</div>
-      <p class="form-note">Your info is used solely to process this request and will not be shared.</p>
-    </form>
-  </div>
-</section>
-
 <!-- CONTACT -->
 <section id="contact">
   <div class="contact-section">
@@ -2292,13 +2234,12 @@ section:not(.hero) { content-visibility: auto; contain-intrinsic-size: auto 900p
 </section>
 
 <footer style="border-top:1px solid var(--border-color);padding:2rem;text-align:center;color:var(--text-secondary);font-family:monospace;font-size:0.8rem;">
-  <p style="margin-bottom:0.5rem;"><span style="color:var(--accent-red);">Haareesh Kumar</span> · Cloud Engineer · Petaling Jaya, Malaysia</p>
+  <p style="margin-bottom:0.5rem;"><span style="color:var(--accent-red);">Haareesh Kumar</span> · Senior Cloud Engineer · Petaling Jaya, Malaysia</p>
   <p>Hosted on GitHub Pages · Cloudflare DNS · Homelab on Ubuntu</p>
   <div style="margin-top:1rem;display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;">
     <a href="https://www.linkedin.com/in/haareeshkumar/" target="_blank" rel="noopener noreferrer" style="color:var(--text-secondary);text-decoration:none;transition:color 0.3s;" onmouseover="this.style.color='var(--accent-cyan)'" onmouseout="this.style.color='var(--text-secondary)'">LinkedIn</a>
     <a href="https://www.credly.com/users/haareesh-kumar" target="_blank" rel="noopener noreferrer" style="color:var(--text-secondary);text-decoration:none;transition:color 0.3s;" onmouseover="this.style.color='var(--accent-cyan)'" onmouseout="this.style.color='var(--text-secondary)'">Credly</a>
     <a href="mailto:haareesh2@gmail.com" style="color:var(--text-secondary);text-decoration:none;transition:color 0.3s;" onmouseover="this.style.color='var(--accent-cyan)'" onmouseout="this.style.color='var(--text-secondary)'">Email</a>
-    <a href="https://guac.cloudron.haareeshkumar.com/" target="_blank" rel="noopener noreferrer" style="color:var(--text-secondary);text-decoration:none;transition:color 0.3s;" onmouseover="this.style.color='var(--accent-cyan)'" onmouseout="this.style.color='var(--text-secondary)'">Guacamole</a>
   </div>
 </footer>
 
