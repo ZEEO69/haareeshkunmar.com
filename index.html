@@ -1756,8 +1756,8 @@ textarea.form-3d-input { resize:vertical; min-height:100px; }
 /* Scroll bar: scale a full-width bar instead of animating width. */
 .scroll-progress-3d { width: 100%; transform: scaleX(0); transform-origin: 0 50%; transition: none; will-change: transform; }
 
-/* Don't render (or animate) sections until they are near the screen. */
-section:not(.hero) { content-visibility: auto; contain-intrinsic-size: auto 900px; }
+/* Menu links land just below the fixed nav bar. */
+section[id] { scroll-margin-top: 90px; }
 
 /* Respect the OS "reduce motion" setting. */
 @media (prefers-reduced-motion: reduce) {
