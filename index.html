@@ -1771,6 +1771,11 @@ section[id] { scroll-margin-top: 90px; }
   background:linear-gradient(135deg, var(--accent-red), #b91c1c);
   box-shadow:0 0 0 1px rgba(255,255,255,0.08), 0 0 18px var(--glow-red); transition:transform .2s ease; }
 .logo:hover .logo-mark { transform:translateY(-2px); }
+
+/* Nav links: the hover shimmer (::before) sits just left of each link. Links were inline,
+   so overflow:hidden didn't clip it and it covered the previous link, stealing its clicks. */
+.nav-links a { display:inline-block; }
+.nav-links a::before { pointer-events:none; }
 </style>
 </head>
 <body>
