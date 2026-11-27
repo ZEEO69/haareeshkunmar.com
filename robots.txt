@@ -3,3 +3,5 @@ Disallow: /certs/
 
 User-agent: Googlebot-Image
 Disallow: /
+
+Sitemap: https://haareeshkumar.com/sitemap.xml
