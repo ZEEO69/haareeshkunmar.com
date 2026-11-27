@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<!-- Security: only load from this site; no outgoing requests (re-allow https://formspree.io if the lab access form returns). -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; connect-src 'none'; form-action 'none'; object-src 'none'; base-uri 'self'; upgrade-insecure-requests"/>
+<!-- Security: only load from this site; the only outgoing request allowed is the lab access form to Formspree. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; connect-src https://formspree.io; form-action https://formspree.io; object-src 'none'; base-uri 'self'; upgrade-insecure-requests"/>
 <meta name="referrer" content="strict-origin-when-cross-origin"/>
 <title>Haareesh Kumar — Senior Cloud Engineer | Malaysia</title>
 <meta name="description" content="Haareesh Kumar is a Senior Cloud Engineer based in Petaling Jaya, Malaysia. Specialising in AWS, Linux, ZStack, Veeam, enterprise server hardware and infrastructure."/>
@@ -1696,6 +1696,7 @@
 .hamburger-btn.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
 
 .access-grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:2rem; margin-bottom:2rem; }
+@media (max-width: 768px) { .access-grid-2 { grid-template-columns:1fr; } .form-3d { padding:1.5rem; } }
 .access-card-3d { background:var(--glass); backdrop-filter:blur(20px); border:1px solid var(--border-color); border-radius:20px; padding:2rem; display:flex; flex-direction:column; gap:0.75rem; transition:all 0.4s; }
 .access-card-3d:hover { border-color:var(--accent-cyan); box-shadow:0 0 40px var(--glow-cyan); transform:translateY(-8px); }
 .access-card-icon { font-size:2.5rem; margin-bottom:0.5rem; }
@@ -1820,6 +1821,7 @@ section[id] { scroll-margin-top: 90px; }
       <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
       <li><a href="#certs" onclick="closeMenu()">Certs</a></li>
       <li><a href="#experience" onclick="closeMenu()">Experience</a></li>
+      <li><a href="#lab" onclick="closeMenu()">Lab</a></li>
       <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
     </ul>
   </div>
@@ -2191,6 +2193,56 @@ section[id] { scroll-margin-top: 90px; }
     </div>
 
   </div>
+</section>
+
+<!-- LAB -->
+<section id="lab">
+  <div class="section-header">
+    <div class="section-tag-3d">// Homelab</div>
+    <h2 class="section-title">Remote Lab Access</h2>
+    <p class="section-subtitle">My self-hosted lab runs on Proxmox VE, with Apache Guacamole published through a Cloudflare Tunnel and protected by Cloudflare Access. Access is by invitation only.</p>
+  </div>
+
+  <div class="access-grid-2">
+    <div class="access-card-3d">
+      <div class="access-card-icon">🖥️</div>
+      <div class="access-card-title">Launch the Lab</div>
+      <p class="access-card-desc">Opens the Guacamole web console. You'll be asked to verify an approved email address with a one-time code before the login page appears.</p>
+      <a href="https://guac.haareeshkumar.com" target="_blank" rel="noopener noreferrer" class="cta-btn" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:0.9rem 1.5rem;background:linear-gradient(135deg,var(--accent-red),#b91c1c);color:#fff;border-radius:12px;text-decoration:none;font-weight:600;box-shadow:0 0 30px var(--glow-red);transition:all 0.3s;">Open Guacamole ↗</a>
+      <p class="form-note">guac.haareeshkumar.com · approved users only</p>
+    </div>
+    <div class="access-card-3d">
+      <div class="access-card-icon">🔐</div>
+      <div class="access-card-title">How Access Works</div>
+      <p class="access-card-desc">Send a request with the form below. If it's approved, I'll add your email to the access policy and set up a lab account for you. Access may be time-limited, and I review every session.</p>
+      <p class="form-note">Authorized, lawful use only. No attacks against systems outside the lab.</p>
+    </div>
+  </div>
+
+  <form class="form-3d" id="accessForm" action="https://formspree.io/f/xdayjogb" method="POST">
+    <input type="hidden" name="_subject" value="Lab access request — haareeshkumar.com"/>
+    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"/>
+    <div class="form-3d-group">
+      <label class="form-3d-label" for="lab-name">Name</label>
+      <input class="form-3d-input" id="lab-name" name="name" type="text" required maxlength="100"/>
+    </div>
+    <div class="form-3d-group">
+      <label class="form-3d-label" for="lab-email">Email (this is the address that will be approved)</label>
+      <input class="form-3d-input" id="lab-email" name="email" type="email" required maxlength="200"/>
+    </div>
+    <div class="form-3d-group">
+      <label class="form-3d-label" for="lab-org">Company / School (optional)</label>
+      <input class="form-3d-input" id="lab-org" name="organization" type="text" maxlength="150"/>
+    </div>
+    <div class="form-3d-group">
+      <label class="form-3d-label" for="lab-reason">What would you like to use the lab for?</label>
+      <textarea class="form-3d-input" id="lab-reason" name="reason" required maxlength="2000"></textarea>
+    </div>
+    <label class="check-3d"><input type="checkbox" name="agreed_to_rules" value="yes" required/> I'll use the lab only for authorized, lawful learning and won't target any system outside it.</label>
+    <button type="submit" class="cta-btn" style="display:inline-flex;align-items:center;gap:8px;padding:0.9rem 2rem;margin-top:0.75rem;background:transparent;color:var(--accent-cyan);border:2px solid var(--accent-cyan);border-radius:12px;font-weight:600;font-family:inherit;font-size:0.95rem;cursor:pointer;box-shadow:0 0 20px var(--glow-cyan);transition:all 0.3s;">Request Access</button>
+    <p class="form-note">Requests go to my inbox via Formspree. I usually reply within a few days.</p>
+    <div class="success-msg" id="successMsg">Request sent ✓ — I'll get back to you by email.</div>
+  </form>
 </section>
 
 <!-- CONTACT -->
